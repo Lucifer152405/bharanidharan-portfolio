@@ -1,100 +1,880 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Bharanidharan S — Water Resources, Water Supply Design, Hydraulic Modelling, GIS and Hydrology portfolio.">
-<title>Bharanidharan S | Water Resources & Research Portfolio</title>
-<style>
-:root{--bg:#07111e;--surface:#101e30;--surface2:#142840;--text:#edf6ff;--muted:#afc0d4;--cyan:#69ddff;--mint:#91e9c4;--line:#293e56;--max:1140px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:radial-gradient(ellipse at 82% -10%,#164266 0,transparent 35%),var(--bg);color:var(--text);font:16px/1.7 Inter,Segoe UI,Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),92%);margin:auto}
-nav{position:sticky;top:0;z-index:9;background:#07111eeF;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}.nav{min-height:70px;display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{font-weight:850;letter-spacing:.07em}.brand span{color:var(--cyan)}.links{display:flex;gap:20px;color:var(--muted);font-size:.9rem}.links a:hover{color:var(--cyan)}
-.hero{padding:88px 0 75px;display:grid;grid-template-columns:1.2fr .8fr;gap:55px;align-items:center}.kicker{font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}h1{font-size:clamp(2.7rem,6vw,5.3rem);line-height:1.02;letter-spacing:-.055em;margin:15px 0 20px}h1 span{color:var(--cyan)}.lead{font-size:1.12rem;color:var(--muted);max-width:680px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 17px;border:1px solid var(--line);border-radius:11px;font-weight:750;transition:.2s}.btn:hover{transform:translateY(-2px);border-color:var(--cyan)}.btn.primary{background:var(--cyan);border-color:var(--cyan);color:#07111e}
-.hero-panel{background:transparent;border:0;border-radius:0;padding:0}.card,.contact-panel{background:linear-gradient(145deg,#142943,#0d1929);border:1px solid var(--line);border-radius:20px;padding:22px}.network{height:470px;overflow:visible;border-radius:0;background:transparent;display:flex;align-items:flex-end;justify-content:center}.network svg{width:100%;height:100%}.panel-caption{color:var(--muted);font-size:.83rem;margin:12px 0 0}.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:13px}.mini{background:#091624;padding:11px;border-radius:10px}.mini b{display:block;color:var(--cyan);font-size:.92rem}.mini small{color:var(--muted);font-size:.75rem}
-section{padding:68px 0;border-top:1px solid #1c2b3f}.head{margin-bottom:27px}.head h2{font-size:clamp(1.9rem,3vw,2.6rem);margin:5px 0 8px;line-height:1.2}.head p,.muted{color:var(--muted);max-width:760px;margin-top:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.card{padding:22px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#4b89aa}.card h3{margin:8px 0 7px;font-size:1.2rem}.card p{color:var(--muted);margin:8px 0}.art{height:140px;background:linear-gradient(130deg,#0b253a,#16425b);border-radius:12px;margin-bottom:15px;overflow:hidden}.art svg{width:100%;height:100%}.tag{display:inline-block;font-size:.75rem;padding:3px 9px;border:1px solid #28516d;background:#12344b;color:#c3f0ff;border-radius:999px;margin:3px 4px 0 0}.detail{font-size:.88rem;color:#c1d1e1}.timeline{border-left:1px solid #36536f;margin-left:8px;padding-left:23px;display:grid;gap:22px}.entry{position:relative}.entry:before{content:"";position:absolute;left:-29px;top:9px;width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px #10243a}.entry h3{margin:0}.entry .date{color:var(--cyan);font-size:.87rem}.entry p{margin:5px 0;color:var(--muted)}
-.skills{display:flex;flex-wrap:wrap;gap:9px}.skill{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;font-size:.9rem}.research-note{border-left:3px solid var(--mint);padding:13px 17px;background:#102438;border-radius:0 10px 10px 0;color:#d7e8f6}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.contact-form{display:grid;gap:12px;margin-top:14px}.contact-form label{display:grid;gap:6px;color:var(--muted);font-size:.9rem}.contact-form input,.contact-form textarea{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:9px;padding:11px 12px;background:#091624;color:var(--text);font:inherit}.contact-form textarea{min-height:125px;resize:vertical}.contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--cyan);outline-offset:1px}.contact-panel h3{margin:0 0 8px}.contact-line{overflow-wrap:anywhere;color:var(--muted);margin:8px 0}footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.85rem}.small{font-size:.84rem;color:var(--muted)}.reveal{opacity:0;transform:translateY(14px);transition:.55s}.reveal.visible{opacity:1;transform:none}
-@media(max-width:760px){.network{height:390px}.hero{grid-template-columns:1fr;padding:60px 0 48px;gap:27px}.grid,.contact-grid{grid-template-columns:1fr}.links{gap:12px;font-size:.79rem}.links a:nth-child(2){display:none}section{padding:50px 0}.mini-grid{grid-template-columns:repeat(3,1fr)}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,.reveal{transition:none!important;transform:none!important}.reveal{opacity:1}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Bharanidharan S — Water Resources, Water Supply Design, Hydraulic Modelling, GIS and Hydrology portfolio.">
+    <title>Bharanidharan S | Water Resources & Research Portfolio</title>
+    <style>
+        :root {
+            --bg: #07111e;
+            --surface: #101e30;
+            --surface2: #142840;
+            --text: #edf6ff;
+            --muted: #afc0d4;
+            --cyan: #69ddff;
+            --mint: #91e9c4;
+            --line: #293e56;
+            --max: 1140px
+        }
 
-.project-link{display:block;min-width:0}.project-link:hover .project-card{transform:translateY(-4px);border-color:var(--cyan)}
-.project-card{height:100%;transition:transform .2s,border-color .2s}.project-card h3{margin-top:12px}
-.open-project{display:inline-block;margin-top:12px;color:var(--cyan);font-weight:750;font-size:.9rem}
-.art{position:relative;display:flex;align-items:center;justify-content:center}
-.art-label{z-index:1;font-weight:800;letter-spacing:.08em;color:#bcefff;text-transform:uppercase}
-.art-lines{position:absolute;inset:0;opacity:.42;background-image:linear-gradient(30deg,transparent 48%,#69ddff 49%,#69ddff 50%,transparent 51%),linear-gradient(150deg,transparent 48%,#91e9c4 49%,#91e9c4 50%,transparent 51%);background-size:95px 60px,130px 75px}
+        * {
+            box-sizing: border-box
+        }
 
-.certificate-thumb{height:190px;border-radius:12px;background:linear-gradient(135deg,#f7f3e8,#fffdf7);color:#10223a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;font-weight:850;letter-spacing:.08em;border:6px double #c7b17d;margin-bottom:15px}
-.certificate-seal{border:2px solid #c7b17d;border-radius:50%;padding:12px 10px;color:#173d72;font-size:1.2rem}
-.certificate-image{width:100%;height:190px;object-fit:contain;background:#f8f7f1;border-radius:12px;margin-bottom:15px}
-.certificate-card{height:100%}
-@media(max-width:760px){.certificate-image,.certificate-thumb{height:165px}}
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 82px
+        }
 
-</style>
+        body {
+            margin: 0;
+            background: radial-gradient(ellipse at 82% -10%, #164266 0, transparent 35%), var(--bg);
+            color: var(--text);
+            font: 16px/1.7 Inter, Segoe UI, Arial, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .wrap {
+            width: min(var(--max), 92%);
+            margin: auto
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 9;
+            background: #07111eeF;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .nav {
+            min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px
+        }
+
+        .brand {
+            font-weight: 850;
+            letter-spacing: .07em
+        }
+
+        .brand span {
+            color: var(--cyan)
+        }
+
+        .links {
+            display: flex;
+            gap: 20px;
+            color: var(--muted);
+            font-size: .9rem
+        }
+
+        .links a:hover {
+            color: var(--cyan)
+        }
+
+        .hero {
+            padding: 88px 0 75px;
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 55px;
+            align-items: center
+        }
+
+        .kicker {
+            font-size: .78rem;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--cyan)
+        }
+
+        h1 {
+            font-size: clamp(2.7rem, 6vw, 5.3rem);
+            line-height: 1.02;
+            letter-spacing: -.055em;
+            margin: 15px 0 20px
+        }
+
+        h1 span {
+            color: var(--cyan)
+        }
+
+        .lead {
+            font-size: 1.12rem;
+            color: var(--muted);
+            max-width: 680px
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 27px
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 11px 17px;
+            border: 1px solid var(--line);
+            border-radius: 11px;
+            font-weight: 750;
+            transition: .2s
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--cyan)
+        }
+
+        .btn.primary {
+            background: var(--cyan);
+            border-color: var(--cyan);
+            color: #07111e
+        }
+
+        .hero-panel {
+            background: transparent;
+            border: 0;
+            border-radius: 0;
+            padding: 0
+        }
+
+        .card,
+        .contact-panel {
+            background: linear-gradient(145deg, #142943, #0d1929);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 22px
+        }
+
+        .network {
+            height: 470px;
+            overflow: visible;
+            border-radius: 0;
+            background: transparent;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center
+        }
+
+        .network svg {
+            width: 100%;
+            height: 100%
+        }
+
+        .panel-caption {
+            color: var(--muted);
+            font-size: .83rem;
+            margin: 12px 0 0
+        }
+
+        .mini-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 9px;
+            margin-top: 13px
+        }
+
+        .mini {
+            background: #091624;
+            padding: 11px;
+            border-radius: 10px
+        }
+
+        .mini b {
+            display: block;
+            color: var(--cyan);
+            font-size: .92rem
+        }
+
+        .mini small {
+            color: var(--muted);
+            font-size: .75rem
+        }
+
+        section {
+            padding: 68px 0;
+            border-top: 1px solid #1c2b3f
+        }
+
+        .head {
+            margin-bottom: 27px
+        }
+
+        .head h2 {
+            font-size: clamp(1.9rem, 3vw, 2.6rem);
+            margin: 5px 0 8px;
+            line-height: 1.2
+        }
+
+        .head p,
+        .muted {
+            color: var(--muted);
+            max-width: 760px;
+            margin-top: 0
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 17px
+        }
+
+        .card {
+            padding: 22px;
+            transition: .2s
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: #4b89aa
+        }
+
+        .card h3 {
+            margin: 8px 0 7px;
+            font-size: 1.2rem
+        }
+
+        .card p {
+            color: var(--muted);
+            margin: 8px 0
+        }
+
+        .art {
+            height: 140px;
+            background: linear-gradient(130deg, #0b253a, #16425b);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden
+        }
+
+        .art svg {
+            width: 100%;
+            height: 100%
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: .75rem;
+            padding: 3px 9px;
+            border: 1px solid #28516d;
+            background: #12344b;
+            color: #c3f0ff;
+            border-radius: 999px;
+            margin: 3px 4px 0 0
+        }
+
+        .detail {
+            font-size: .88rem;
+            color: #c1d1e1
+        }
+
+        .timeline {
+            border-left: 1px solid #36536f;
+            margin-left: 8px;
+            padding-left: 23px;
+            display: grid;
+            gap: 22px
+        }
+
+        .entry {
+            position: relative
+        }
+
+        .entry:before {
+            content: "";
+            position: absolute;
+            left: -29px;
+            top: 9px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow: 0 0 0 5px #10243a
+        }
+
+        .entry h3 {
+            margin: 0
+        }
+
+        .entry .date {
+            color: var(--cyan);
+            font-size: .87rem
+        }
+
+        .entry p {
+            margin: 5px 0;
+            color: var(--muted)
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px
+        }
+
+        .skill {
+            border: 1px solid var(--line);
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 8px 12px;
+            font-size: .9rem
+        }
+
+        .research-note {
+            border-left: 3px solid var(--mint);
+            padding: 13px 17px;
+            background: #102438;
+            border-radius: 0 10px 10px 0;
+            color: #d7e8f6
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 17px
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 12px;
+            margin-top: 14px
+        }
+
+        .contact-form label {
+            display: grid;
+            gap: 6px;
+            color: var(--muted);
+            font-size: .9rem
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid var(--line);
+            border-radius: 9px;
+            padding: 11px 12px;
+            background: #091624;
+            color: var(--text);
+            font: inherit
+        }
+
+        .contact-form textarea {
+            min-height: 125px;
+            resize: vertical
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: 2px solid var(--cyan);
+            outline-offset: 1px
+        }
+
+        .contact-panel h3 {
+            margin: 0 0 8px
+        }
+
+        .contact-line {
+            overflow-wrap: anywhere;
+            color: var(--muted);
+            margin: 8px 0
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 25px 0;
+            color: var(--muted);
+            font-size: .85rem
+        }
+
+        .small {
+            font-size: .84rem;
+            color: var(--muted)
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: .55s
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none
+        }
+
+        @media(max-width:760px) {
+            .network {
+                height: 390px
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 60px 0 48px;
+                gap: 27px
+            }
+
+            .grid,
+            .contact-grid {
+                grid-template-columns: 1fr
+            }
+
+            .links {
+                gap: 12px;
+                font-size: .79rem
+            }
+
+            .links a:nth-child(2) {
+                display: none
+            }
+
+            section {
+                padding: 50px 0
+            }
+
+            .mini-grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            *,
+            .reveal {
+                transition: none !important;
+                transform: none !important
+            }
+
+            .reveal {
+                opacity: 1
+            }
+        }
+
+        .project-link {
+            display: block;
+            min-width: 0
+        }
+
+        .project-link:hover .project-card {
+            transform: translateY(-4px);
+            border-color: var(--cyan)
+        }
+
+        .project-card {
+            height: 100%;
+            transition: transform .2s, border-color .2s
+        }
+
+        .project-card h3 {
+            margin-top: 12px
+        }
+
+        .open-project {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--cyan);
+            font-weight: 750;
+            font-size: .9rem
+        }
+
+        .art {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .art-label {
+            z-index: 1;
+            font-weight: 800;
+            letter-spacing: .08em;
+            color: #bcefff;
+            text-transform: uppercase
+        }
+
+        .art-lines {
+            position: absolute;
+            inset: 0;
+            opacity: .42;
+            background-image: linear-gradient(30deg, transparent 48%, #69ddff 49%, #69ddff 50%, transparent 51%), linear-gradient(150deg, transparent 48%, #91e9c4 49%, #91e9c4 50%, transparent 51%);
+            background-size: 95px 60px, 130px 75px
+        }
+
+        .certificate-thumb {
+            height: 190px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #f7f3e8, #fffdf7);
+            color: #10223a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-align: center;
+            font-weight: 850;
+            letter-spacing: .08em;
+            border: 6px double #c7b17d;
+            margin-bottom: 15px
+        }
+
+        .certificate-seal {
+            border: 2px solid #c7b17d;
+            border-radius: 50%;
+            padding: 12px 10px;
+            color: #173d72;
+            font-size: 1.2rem
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: 190px;
+            object-fit: contain;
+            background: #f8f7f1;
+            border-radius: 12px;
+            margin-bottom: 15px
+        }
+
+        .certificate-card {
+            height: 100%
+        }
+
+        @media(max-width:760px) {
+
+            .certificate-image,
+            .certificate-thumb {
+                height: 165px
+            }
+        }
+    </style>
 </head>
+
 <body>
-<nav><div class="wrap nav"><a class="brand" href="#home">BHARANI<span>.</span></a><div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a></div></div></nav>
-<main>
-<header class="wrap hero" id="home">
-<div><div class="kicker">Water Resources · Water Supply · GIS · Hydrology</div><h1>Engineering better<br><span>water systems.</span></h1>
-<p class="lead">I'm Bharanidharan S, an M.Tech graduate in Integrated Water Resources Management with practical exposure to water-supply design, hydraulic modelling, GIS network preparation and hydrological analysis. I'm interested in engineering consultancy, research and project opportunities that support reliable and sustainable water systems.</p>
-<div class="actions"><a class="btn primary" href="#projects">Explore projects ↓</a><a class="btn" href="mailto:bharanidharan342@gmail.com">Email me ↗</a><a class="btn" href="https://www.linkedin.com/in/bharanidharan-s-150524bj/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
-</div>
-<aside class="hero-panel"><div class="network"><img src="bharanidharan_transparent_portrait.png" alt="Bharanidharan in a professional portrait" style="width:100%;height:100%;max-height:470px;object-fit:contain;object-position:center bottom;border-radius:0;display:block;background:transparent"></div><div style="display:none"><svg viewBox="0 0 500 280" aria-label="Illustration of a water distribution network"><defs><linearGradient id="pipe" x1="0" x2="1"><stop stop-color="#69ddff"/><stop offset="1" stop-color="#91e9c4"/></linearGradient></defs><g stroke="#1b3b54" stroke-width="1" fill="none"><path d="M0 40H500M0 80H500M0 120H500M0 160H500M0 200H500M0 240H500M50 0V280M100 0V280M150 0V280M200 0V280M250 0V280M300 0V280M350 0V280M400 0V280M450 0V280"/></g><g fill="none" stroke="url(#pipe)" stroke-width="5" stroke-linecap="round"><path d="M35 215L100 155L185 185L255 95L345 125L445 50"/><path d="M100 155L125 65L255 95L280 225L385 210L445 145L445 50"/><path d="M185 185L155 250L280 225M345 125L385 210"/></g><g fill="#081522" stroke="#c1f3ff" stroke-width="3"><circle cx="35" cy="215" r="7"/><circle cx="100" cy="155" r="7"/><circle cx="185" cy="185" r="7"/><circle cx="255" cy="95" r="7"/><circle cx="345" cy="125" r="7"/><circle cx="445" cy="50" r="7"/><circle cx="125" cy="65" r="7"/><circle cx="280" cy="225" r="7"/><circle cx="385" cy="210" r="7"/><circle cx="445" cy="145" r="7"/><circle cx="155" cy="250" r="7"/></g></svg></div><p class="panel-caption">Water Resources · Water Supply · GIS · Hydrology</p><div class="mini-grid"><div class="mini"><b>M.Tech</b><small>IWRM</small></div><div class="mini"><b>WaterGEMS</b><small>Hydraulics</small></div><div class="mini"><b>GIS</b><small>Mapping</small></div></div></aside>
-</header>
+    <nav>
+        <div class="wrap nav"><a class="brand" href="#home">BHARANIDHARAN<span>.</span></a>
+            <div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a
+                    href="#projects">Projects</a><a href="#research">Research</a><a
+                    href="#certificates">Certificates</a><a href="#contact">Contact</a></div>
+        </div>
+    </nav>
+    <main>
+        <header class="wrap hero" id="home">
+            <div>
+                <div class="kicker">Water Resources · Water Supply · GIS · Hydrology</div>
+                <h1>Engineering better<br><span>water systems.</span></h1>
+                <p class="lead">I'm Bharanidharan S, an M.Tech graduate in Integrated Water Resources Management with
+                    practical exposure to water-supply design, hydraulic modelling, GIS network preparation and
+                    hydrological analysis. I'm interested in engineering consultancy, research and project opportunities
+                    that support reliable and sustainable water systems.</p>
+                <div class="actions"><a class="btn primary" href="#projects">Explore projects ↓</a><a class="btn"
+                        href="mailto:bharanidharan342@gmail.com">Email me ↗</a><a class="btn"
+                        href="https://www.linkedin.com/in/bharanidharan-s-150524bj/" target="_blank"
+                        rel="noopener">LinkedIn ↗</a></div>
+            </div>
+            <aside class="hero-panel">
+                <div class="network"><img src="bharanidharan_transparent_portrait.png"
+                        alt="Bharanidharan in a professional portrait"
+                        style="width:100%;height:100%;max-height:470px;object-fit:contain;object-position:center bottom;border-radius:0;display:block;background:transparent">
+                </div>
+                <div style="display:none"><svg viewBox="0 0 500 280"
+                        aria-label="Illustration of a water distribution network">
+                        <defs>
+                            <linearGradient id="pipe" x1="0" x2="1">
+                                <stop stop-color="#69ddff" />
+                                <stop offset="1" stop-color="#91e9c4" />
+                            </linearGradient>
+                        </defs>
+                        <g stroke="#1b3b54" stroke-width="1" fill="none">
+                            <path
+                                d="M0 40H500M0 80H500M0 120H500M0 160H500M0 200H500M0 240H500M50 0V280M100 0V280M150 0V280M200 0V280M250 0V280M300 0V280M350 0V280M400 0V280M450 0V280" />
+                        </g>
+                        <g fill="none" stroke="url(#pipe)" stroke-width="5" stroke-linecap="round">
+                            <path d="M35 215L100 155L185 185L255 95L345 125L445 50" />
+                            <path d="M100 155L125 65L255 95L280 225L385 210L445 145L445 50" />
+                            <path d="M185 185L155 250L280 225M345 125L385 210" />
+                        </g>
+                        <g fill="#081522" stroke="#c1f3ff" stroke-width="3">
+                            <circle cx="35" cy="215" r="7" />
+                            <circle cx="100" cy="155" r="7" />
+                            <circle cx="185" cy="185" r="7" />
+                            <circle cx="255" cy="95" r="7" />
+                            <circle cx="345" cy="125" r="7" />
+                            <circle cx="445" cy="50" r="7" />
+                            <circle cx="125" cy="65" r="7" />
+                            <circle cx="280" cy="225" r="7" />
+                            <circle cx="385" cy="210" r="7" />
+                            <circle cx="445" cy="145" r="7" />
+                            <circle cx="155" cy="250" r="7" />
+                        </g>
+                    </svg></div>
+                <p class="panel-caption">Water Resources · Water Supply · GIS · Hydrology</p>
+                <div class="mini-grid">
+                    <div class="mini"><b>M.Tech</b><small>IWRM</small></div>
+                    <div class="mini"><b>WaterGEMS</b><small>Hydraulics</small></div>
+                    <div class="mini"><b>GIS</b><small>Mapping</small></div>
+                </div>
+            </aside>
+        </header>
 
-<section id="about"><div class="wrap reveal"><div class="head"><div class="kicker">Profile</div><h2>About me</h2><p>My education combines agricultural engineering with integrated water resources management. I enjoy using engineering calculations, spatial data and modelling tools to understand water systems and communicate results clearly.</p></div><div class="grid">
-<article class="card"><h3>Education</h3><p><strong>M.Tech — Integrated Water Resources Management</strong><br>Karunya Institute of Technology and Sciences, Coimbatore<br><span class="detail">2024–2026 · CGPA 6.9/10</span></p><p><strong>B.E. — Agricultural Engineering</strong><br>Hindusthan College of Engineering and Technology, Coimbatore<br><span class="detail">2020–2024 · CGPA 7.4/10</span></p></article>
-<article class="card"><h3>Areas of interest</h3><p>Water-supply and wastewater infrastructure, hydraulic modelling, hydrology, watershed analysis, GIS-based engineering, water quality and applied water-resources research.</p><div><span class="tag">Industry roles</span><span class="tag">Research roles</span><span class="tag">Project positions</span><span class="tag">Consultancy</span></div></article>
-</div></div></section>
+        <section id="about">
+            <div class="wrap reveal">
+                <div class="head">
+                    <div class="kicker">Profile</div>
+                    <h2>About me</h2>
+                    <p>My education combines agricultural engineering with integrated water resources management. I
+                        enjoy using engineering calculations, spatial data and modelling tools to understand water
+                        systems and communicate results clearly.</p>
+                </div>
+                <div class="grid">
+                    <article class="card">
+                        <h3>Education</h3>
+                        <p><strong>M.Tech — Integrated Water Resources Management</strong><br>Karunya Institute of
+                            Technology and Sciences, Coimbatore<br><span class="detail">2024–2026 · CGPA 6.9/10</span>
+                        </p>
+                        <p><strong>B.E. — Agricultural Engineering</strong><br>Hindusthan College of Engineering and
+                            Technology, Coimbatore<br><span class="detail">2020–2024 · CGPA 7.4/10</span></p>
+                    </article>
+                    <article class="card">
+                        <h3>Areas of interest</h3>
+                        <p>Water-supply and wastewater infrastructure, hydraulic modelling, hydrology, watershed
+                            analysis, GIS-based engineering, water quality and applied water-resources research.</p>
+                        <div><span class="tag">Industry roles</span><span class="tag">Research roles</span><span
+                                class="tag">Project positions</span><span class="tag">Consultancy</span></div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-<section id="experience"><div class="wrap reveal"><div class="head"><div class="kicker">Professional experience</div><h2>Internships & applied work</h2></div><div class="timeline">
-<div class="entry"><h3>SUEZ, Coimbatore</h3><div class="date">Water Supply Design Intern · Dec 2025 – May 2026</div><p>Gained practical exposure to water-supply design workflows, including demand assessment, population forecasting, GIS-based network preparation, hydraulic modelling in WaterGEMS, review of key hydraulic parameters, and technical documentation. Specific client information, project drawings, datasets and deliverables are intentionally excluded to respect confidentiality.</p></div>
-<div class="entry"><h3>Dhan Agri</h3><div class="date">Internship experience</div><p>Internship experience in an agriculture-related setting. Add the exact role, dates and responsibilities here so this entry reflects your work accurately.</p></div>
-</div></div></section>
+        <section id="experience">
+            <div class="wrap reveal">
+                <div class="head">
+                    <div class="kicker">Professional experience</div>
+                    <h2>Internships & applied work</h2>
+                </div>
+                <div class="timeline">
+                    <div class="entry">
+                        <h3>SUEZ, Coimbatore</h3>
+                        <div class="date">Water Supply Design Intern · Dec 2025 – May 2026</div>
+                        <p>Gained practical exposure to water-supply design workflows, including demand assessment,
+                            population forecasting, GIS-based network preparation, hydraulic modelling in WaterGEMS,
+                            review of key hydraulic parameters, and technical documentation. Specific client
+                            information, project drawings, datasets and deliverables are intentionally excluded to
+                            respect confidentiality.</p>
+                    </div>
+                    <div class="entry">
+                        <h3>Dhan Agri</h3>
+                        <div class="date">Internship experience</div>
+                        <p>Internship experience in an agriculture-related setting. Add the exact role, dates and
+                            responsibilities here so this entry reflects your work accurately.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section id="projects"><div class="wrap reveal"><div class="head"><div class="kicker">Selected engineering work</div><h2>Projects</h2><p>Select a project card to open its dedicated page, with the project objective, detailed working methodology, tools, outputs, checks and confidentiality notes.</p></div><div class="grid"><a class="project-link" href="projects/jayaram-nagar-water-distribution.html"><article class="card project-card"><div class="art"><div class="art-label">WaterGEMS</div><div class="art-lines"></div></div><span class="tag">WaterGEMS</span><span class="tag">CPHEEO</span><span class="tag">Water Supply Design</span><h3>Drinking Water Distribution Network — Jayaram Nagar &amp; VOC Park DMAs</h3><p>SUEZ internship work covering demand assessment, hydraulic modelling, pipe sizing and DMA pocket isolation.</p><span class="open-project">Open full project page ↗</span></article></a><a class="project-link" href="projects/gis-water-resources-analysis.html"><article class="card project-card"><div class="art"><div class="art-label">ArcGIS Pro</div><div class="art-lines"></div></div><span class="tag">ArcGIS Pro</span><span class="tag">QGIS</span><span class="tag">Spatial Analysis</span><h3>GIS-Based Water Resources Analysis</h3><p>Terrain and thematic layers, spatial analysis and map preparation.</p><span class="open-project">Open full project page ↗</span></article></a><a class="project-link" href="projects/rainfall-runoff-hec-hms.html"><article class="card project-card"><div class="art"><div class="art-label">HEC-HMS</div><div class="art-lines"></div></div><span class="tag">HEC-HMS</span><span class="tag">Hydrology</span><span class="tag">Watershed Analysis</span><h3>Rainfall–Runoff Modelling</h3><p>Watershed inputs, runoff parameter estimation and model workflow.</p><span class="open-project">Open full project page ↗</span></article></a><a class="project-link" href="projects/chlorine-decay-water-network.html"><article class="card project-card"><div class="art"><div class="art-label">WaterGEMS</div><div class="art-lines"></div></div><span class="tag">WaterGEMS</span><span class="tag">Water Quality</span><span class="tag">Research</span><h3>Chlorine Decay in a Water Distribution Network</h3><p>Academic research into chlorine residual behaviour and decay modelling.</p><span class="open-project">Open full project page ↗</span></article></a></div></div></section>
+        <section id="projects">
+            <div class="wrap reveal">
+                <div class="head">
+                    <div class="kicker">Selected engineering work</div>
+                    <h2>Projects</h2>
+                    <p>Select a project card to open its dedicated page, with the project objective, detailed working
+                        methodology, tools, outputs, checks and confidentiality notes.</p>
+                </div>
+                <div class="grid"><a class="project-link" href="projects/jayaram-nagar-water-distribution.html">
+                        <article class="card project-card">
+                            <div class="art">
+                                <div class="art-label">WaterGEMS</div>
+                                <div class="art-lines"></div>
+                            </div><span class="tag">WaterGEMS</span><span class="tag">CPHEEO</span><span
+                                class="tag">Water Supply Design</span>
+                            <h3>Drinking Water Distribution Network — Jayaram Nagar &amp; VOC Park DMAs</h3>
+                            <p>SUEZ internship work covering demand assessment, hydraulic modelling, pipe sizing and DMA
+                                pocket isolation.</p><span class="open-project">Open full project page ↗</span>
+                        </article>
+                    </a><a class="project-link" href="projects/gis-water-resources-analysis.html">
+                        <article class="card project-card">
+                            <div class="art">
+                                <div class="art-label">ArcGIS Pro</div>
+                                <div class="art-lines"></div>
+                            </div><span class="tag">ArcGIS Pro</span><span class="tag">QGIS</span><span
+                                class="tag">Spatial Analysis</span>
+                            <h3>GIS-Based Water Resources Analysis</h3>
+                            <p>Terrain and thematic layers, spatial analysis and map preparation.</p><span
+                                class="open-project">Open full project page ↗</span>
+                        </article>
+                    </a><a class="project-link" href="projects/rainfall-runoff-hec-hms.html">
+                        <article class="card project-card">
+                            <div class="art">
+                                <div class="art-label">HEC-HMS</div>
+                                <div class="art-lines"></div>
+                            </div><span class="tag">HEC-HMS</span><span class="tag">Hydrology</span><span
+                                class="tag">Watershed Analysis</span>
+                            <h3>Rainfall–Runoff Modelling</h3>
+                            <p>Watershed inputs, runoff parameter estimation and model workflow.</p><span
+                                class="open-project">Open full project page ↗</span>
+                        </article>
+                    </a><a class="project-link" href="projects/chlorine-decay-water-network.html">
+                        <article class="card project-card">
+                            <div class="art">
+                                <div class="art-label">WaterGEMS</div>
+                                <div class="art-lines"></div>
+                            </div><span class="tag">WaterGEMS</span><span class="tag">Water Quality</span><span
+                                class="tag">Research</span>
+                            <h3>Chlorine Decay in a Water Distribution Network</h3>
+                            <p>Academic research into chlorine residual behaviour and decay modelling.</p><span
+                                class="open-project">Open full project page ↗</span>
+                        </article>
+                    </a></div>
+            </div>
+        </section>
 
-<section id="research"><div class="wrap reveal"><div class="head"><div class="kicker">Research</div><h2>Research presentation</h2><p>Conference research and academic work, with certificate documents available in the dedicated Certificates section.</p></div><div class="grid">
-<article class="card"><span class="tag">ICWRER 2025</span><h3>Research paper presentation</h3><p><strong>“Chlorine decay simulation in water distribution network using WaterGEMS – A lab scale study”</strong></p><p>Presented research at the 10th International Conference on Water Resources and Environment Research (ICWRER 2025). The abstract was printed in the conference book, and a Certificate of Achievement was received for the research-paper presentation.</p></article>
-</div></div></section>
+        <section id="research">
+            <div class="wrap reveal">
+                <div class="head">
+                    <div class="kicker">Research</div>
+                    <h2>Research presentation</h2>
+                    <p>Conference research and academic work, with certificate documents available in the dedicated
+                        Certificates section.</p>
+                </div>
+                <div class="grid">
+                    <article class="card"><span class="tag">ICWRER 2025</span>
+                        <h3>Research paper presentation</h3>
+                        <p><strong>“Chlorine decay simulation in water distribution network using WaterGEMS – A lab
+                                scale study”</strong></p>
+                        <p>Presented research at the 10th International Conference on Water Resources and Environment
+                            Research (ICWRER 2025). The abstract was printed in the conference book, and a Certificate
+                            of Achievement was received for the research-paper presentation.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
 
-<section id="certificates"><div class="wrap reveal">
- <div class="head"><div class="kicker">Credentials & recognition</div><h2>Certificates</h2>
- <p>Selected internship and research achievements. Open a certificate to view the full document.</p></div>
- <div class="grid">
-  <a class="project-link" href="certificates/suez-internship.html"><article class="card certificate-card">
-   <div class="certificate-thumb"><span class="certificate-seal">SUEZ</span><span>INTERNSHIP<br>COMPLETION</span></div>
-   <span class="tag">Internship</span><span class="tag">Dec 2025 – May 2026</span>
-   <h3>SUEZ Projects Private Limited</h3>
-   <p>Internship completion certificate for work on drinking-water distribution network design using WaterGEMS.</p>
-   <span class="open-project">View certificate ↗</span>
-  </article></a>
-  <a class="project-link" href="certificates/icwrer-2025.html"><article class="card certificate-card">
-   <img class="certificate-image" src="certificates/icwrer_2025_research_presentation.png" alt="ICWRER 2025 research paper presentation certificate">
-   <span class="tag">Research presentation</span><span class="tag">ICWRER 2025</span>
-   <h3>ICWRER 2025 — Certificate of Achievement</h3>
-   <p>Presented the research paper “Chlorine decay simulation in water distribution network using WaterGEMS — A lab scale study”.</p>
-   <span class="open-project">View certificate ↗</span>
-  </article></a>
- </div>
- <p class="small">The public SUEZ certificate copy has the residential address redacted for privacy. Keep the original privately.</p>
-</div></section>
-<section id="skills"><div class="wrap reveal"><div class="head"><div class="kicker">Technical toolkit</div><h2>Skills & methods</h2><p>Skill labels are intentionally separated by area. Keep HEC-HMS marked as academic/project exposure and HEC-RAS as learning-stage experience unless you have completed validated models.</p></div>
-<h3>Water supply & hydraulic design</h3><div class="skills"><span class="skill">WaterGEMS</span><span class="skill">CPHEEO design criteria</span><span class="skill">Water demand assessment</span><span class="skill">Population forecasting</span><span class="skill">Pipe sizing</span><span class="skill">Demand allocation</span><span class="skill">Pressure / velocity / HGL checks</span><span class="skill">Chlorine-decay modelling</span><span class="skill">BOQ & cost estimation</span></div>
-<h3 style="margin-top:25px">GIS & water resources</h3><div class="skills"><span class="skill">ArcMap 10.8</span><span class="skill">ArcGIS</span><span class="skill">QGIS</span><span class="skill">Water network mapping</span><span class="skill">Watershed analysis</span><span class="skill">Hydrology</span><span class="skill">Groundwater</span><span class="skill">Integrated Water Resources Management</span><span class="skill">HEC-HMS — project exposure</span><span class="skill">HEC-RAS — learning</span><span class="skill">MS Excel</span><span class="skill">Technical reporting</span></div>
-</div></section>
+        <section id="certificates">
+            <div class="wrap reveal">
+                <div class="head">
+                    <div class="kicker">Credentials & recognition</div>
+                    <h2>Certificates</h2>
+                    <p>Selected internship and research achievements. Open a certificate to view the full document.</p>
+                </div>
+                <div class="grid">
+                    <a class="project-link" href="certificates/suez-internship.html">
+                        <article class="card certificate-card">
+                            <div class="certificate-thumb"><span
+                                    class="certificate-seal">SUEZ</span><span>INTERNSHIP<br>COMPLETION</span></div>
+                            <span class="tag">Internship</span><span class="tag">Dec 2025 – May 2026</span>
+                            <h3>SUEZ Projects Private Limited</h3>
+                            <p>Internship completion certificate for work on drinking-water distribution network design
+                                using WaterGEMS.</p>
+                            <span class="open-project">View certificate ↗</span>
+                        </article>
+                    </a>
+                    <a class="project-link" href="certificates/icwrer-2025.html">
+                        <article class="card certificate-card">
+                            <img class="certificate-image" src="certificates/icwrer_2025_research_presentation.png"
+                                alt="ICWRER 2025 research paper presentation certificate">
+                            <span class="tag">Research presentation</span><span class="tag">ICWRER 2025</span>
+                            <h3>ICWRER 2025 — Certificate of Achievement</h3>
+                            <p>Presented the research paper “Chlorine decay simulation in water distribution network
+                                using WaterGEMS — A lab scale study”.</p>
+                            <span class="open-project">View certificate ↗</span>
+                        </article>
+                    </a>
+                </div>
+                <p class="small">The public SUEZ certificate copy has the residential address redacted for privacy. Keep
+                    the original privately.</p>
+            </div>
+        </section>
+        <section id="skills">
+            <div class="wrap reveal">
+                <div class="head">
+                    <div class="kicker">Technical toolkit</div>
+                    <h2>Skills & methods</h2>
+                    <p>Skill labels are intentionally separated by area. Keep HEC-HMS marked as academic/project
+                        exposure and HEC-RAS as learning-stage experience unless you have completed validated models.
+                    </p>
+                </div>
+                <h3>Water supply & hydraulic design</h3>
+                <div class="skills"><span class="skill">WaterGEMS</span><span class="skill">CPHEEO design
+                        criteria</span><span class="skill">Water demand assessment</span><span class="skill">Population
+                        forecasting</span><span class="skill">Pipe sizing</span><span class="skill">Demand
+                        allocation</span><span class="skill">Pressure / velocity / HGL checks</span><span
+                        class="skill">Chlorine-decay modelling</span><span class="skill">BOQ & cost estimation</span>
+                </div>
+                <h3 style="margin-top:25px">GIS & water resources</h3>
+                <div class="skills"><span class="skill">ArcMap 10.8</span><span class="skill">ArcGIS</span><span
+                        class="skill">QGIS</span><span class="skill">Water network mapping</span><span
+                        class="skill">Watershed analysis</span><span class="skill">Hydrology</span><span
+                        class="skill">Groundwater</span><span class="skill">Integrated Water Resources
+                        Management</span><span class="skill">HEC-HMS — project exposure</span><span
+                        class="skill">HEC-RAS — learning</span><span class="skill">MS Excel</span><span
+                        class="skill">Technical reporting</span></div>
+            </div>
+        </section>
 
-<section id="contact"><div class="wrap reveal"><div class="head"><div class="kicker">Opportunities & collaboration</div><h2>Let's connect</h2><p>Open to relevant entry-level engineering, consultancy, research, project and academic opportunities in water resources, water supply, hydrology, GIS and environmental engineering.</p></div><div class="contact-grid">
-<div class="contact-panel"><h3>Contact</h3><p class="contact-line">Email: <a href="mailto:bharanidharan342@gmail.com">bharanidharan342@gmail.com</a></p><p class="contact-line">Location: Tamil Nadu, India</p><div class="actions"><a class="btn" href="https://www.linkedin.com/in/bharanidharan-s-150524bj/" target="_blank" rel="noopener">Connect on LinkedIn ↗</a></div><p class="small">Phone number is not displayed publicly.</p></div>
-<div class="contact-panel"><h3>Send a message</h3><p class="muted">Recruiters, employers and research supervisors can prepare an enquiry below.</p><form class="contact-form" id="contactForm" action="https://formspree.io/f/mkjobjyj" method="POST"><label for="contactName">Your name<input id="contactName" name="name" autocomplete="name" required></label><label for="contactEmail">Your email<input id="contactEmail" name="email" type="email" autocomplete="email" required></label><label for="contactSubject">Subject<input id="contactSubject" name="subject" required></label><label for="contactMessage">Message<textarea id="contactMessage" name="message" required></textarea></label><button class="btn primary" type="submit">Send message ↗</button></form><p class="small">Messages are submitted through Formspree. Please do not include sensitive personal information.</p></div>
-</div></div></section>
-</main>
-<footer><div class="wrap">© <span id="year">2026</span> Bharanidharan S · Water Resources · Hydraulic Modelling · GIS · Research</div></footer>
-<script>
-document.getElementById('year').textContent=new Date().getFullYear();
+        <section id="contact">
+            <div class="wrap reveal">
+                <div class="head">
+                    <div class="kicker">Opportunities & collaboration</div>
+                    <h2>Let's connect</h2>
+                    <p>Open to relevant entry-level engineering, consultancy, research, project and academic
+                        opportunities in water resources, water supply, hydrology, GIS and environmental engineering.
+                    </p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-panel">
+                        <h3>Contact</h3>
+                        <p class="contact-line">Email: <a
+                                href="mailto:bharanidharan342@gmail.com">bharanidharan342@gmail.com</a></p>
+                        <p class="contact-line">Location: Tamil Nadu, India</p>
+                        <div class="actions"><a class="btn" href="https://www.linkedin.com/in/bharanidharan-s-150524bj/"
+                                target="_blank" rel="noopener">Connect on LinkedIn ↗</a></div>
+                        <p class="small">Phone number is not displayed publicly.</p>
+                    </div>
+                    <div class="contact-panel">
+                        <h3>Send a message</h3>
+                        <p class="muted">Recruiters, employers and research supervisors can prepare an enquiry below.
+                        </p>
+                        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mkjobjyj"
+                            method="POST"><label for="contactName">Your name<input id="contactName" name="name"
+                                    autocomplete="name" required></label><label for="contactEmail">Your email<input
+                                    id="contactEmail" name="email" type="email" autocomplete="email"
+                                    required></label><label for="contactSubject">Subject<input id="contactSubject"
+                                    name="subject" required></label><label for="contactMessage">Message<textarea
+                                    id="contactMessage" name="message" required></textarea></label><button
+                                class="btn primary" type="submit">Send message ↗</button></form>
+                        <p class="small">Messages are submitted through Formspree. Please do not include sensitive
+                            personal information.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap">© <span id="year">2026</span> Bharanidharan S · Water Resources · Hydraulic Modelling · GIS ·
+            Research</div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))}
-</script>
+        if ('IntersectionObserver' in window) { const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target) } }), { threshold: .08 }); document.querySelectorAll('.reveal').forEach(el => io.observe(el)) } else { document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')) }
+    </script>
 </body>
+
 </html>
